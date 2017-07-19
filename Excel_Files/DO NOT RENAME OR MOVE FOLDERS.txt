@@ -1,0 +1,7 @@
+At this point in time, the program doesn't adapt to folder name changes. 
+Folder names should BE 
+
+Individual_Clinics
+
+Master_Lists
+

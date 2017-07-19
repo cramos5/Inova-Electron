@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temp</title>
+
+    <link href="app\bootstrap-4.0.0-alpha.6-dist\css\bootstrap.min.css" rel="stylesheet">
+
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">-->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>-->
+
+    <style>
+        .topmar {
+            margin-top: 20px;
+        }
+
+        .butwid {
+            margin-left: 65px;
+            width: 240px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container-fluid" style="-webkit-app-region: drag">
+
+
+    <nav class="navbar navbar-inverse bg-primary" >
+        <a class="navbar-brand" href="#">
+            <h1 >Biometrics For Clinic ID <span id="cID">00000</span></h1>
+
+        </a>
+    </nav>
+
+    <form>
+
+        <div class = "form-group row topmar">
+            <label for="Name" class="col-sm-2 col-form-label">Name</label>
+            <div class = "col-sm-10">
+                <div class="input-group" id = Name>
+                    <input type="text" class="form-control input-sm" id = "firstName" placeholder="First Name" style="-webkit-app-region: no-drag" />
+                    <span class="input-group-btn" style="width:0px;"></span>
+                    <input type="text" class="form-control input-sm" id = "lastName" placeholder="Last Name" style="-webkit-app-region: no-drag" />
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="EmployeeID" class="col-sm-2 col-form-label">Employee ID</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="EmployeeID" placeholder="Five Digit #" style="-webkit-app-region: no-drag">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="dob" class="col-sm-2 col-form-label">Date of Birth</label>
+            <div class="col-sm-10">
+                <input type="date" class="form-control" id="dob" placeholder="02/07/1995" style="-webkit-app-region: no-drag">
+            </div>
+        </div>
+
+        <div class = "form-group row">
+            <label for="Height" class="col-sm-2 col-form-label">Height</label>
+            <div class = "col-sm-10">
+                <div class="input-group" id = Height>
+                    <input type="number" class="form-control input-sm" id = "feet" placeholder="Feet" style="-webkit-app-region: no-drag"/>
+                    <span class="input-group-btn" style="width:0px;"></span>
+                    <input type="number" class="form-control input-sm" id = "inches" placeholder="Inches" style="-webkit-app-region: no-drag" />
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="Weight" class="col-sm-2 col-form-label">Weight</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="Weight" placeholder="Ibs" style="-webkit-app-region: no-drag">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="waistMeasurement" class="col-sm-2 col-form-label">Waist Measurement</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="waistMeasurement" placeholder="Inches" style="-webkit-app-region: no-drag">
+            </div>
+        </div>
+
+        <div class = "form-group row">
+            <label for="bloodPressure" class="col-sm-2 col-form-label">Blood Pressure</label>
+            <div class = "col-sm-10">
+                <div class="input-group" id = bloodPressure>
+                    <input type="number" class="form-control input-sm" id = "sys" placeholder="Systolic" style="-webkit-app-region: no-drag" />
+                    <span class="input-group-btn" style="width:0px;">/</span>
+                    <input type="number" class="form-control input-sm" id = "dys" placeholder="Diastolic" style="-webkit-app-region: no-drag" />
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="bodycomp" class="col-sm-2 col-form-label">Body Composition</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="bodycomp" placeholder="Percentage" style="-webkit-app-region: no-drag">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="bmi" class="col-sm-2 col-form-label">Body Mass Ratio</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="bmi" style="-webkit-app-region: no-drag">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="bmi" class="col-sm-2 col-form-label">Pregnant?</label>
+            <div class="col-sm-10">
+                <input type="" class="form-control" id="preg" value = "No" style="-webkit-app-region: no-drag">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="bmi" class="col-sm-2 col-form-label">Fasting?</label>
+            <div class="col-sm-10">
+                <input type="" class="form-control" id="fast" value = "No" style="-webkit-app-region: no-drag">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="bmi" class="col-sm-2 col-form-label">Pacemaker?</label>
+            <div class="col-sm-10">
+                <input type="" class="form-control" id="pace" value = "No" style="-webkit-app-region: no-drag">
+            </div>
+        </div>
+
+
+
+        <div class="row"><!-- panel-footer -->
+            <div class="col-sm-5 text-left">
+                <div class="previous">
+                    <button type="submit" class="btn btn-primary butwid" style="-webkit-app-region: no-drag" >Submit</button>
+                </div>
+            </div>
+            <div class="col-sm-5 text-right">
+                <div class="next">
+                    <button type="button" id="quit" class="btn btn-primary butwid" style="-webkit-app-region: no-drag">Quit</button>
+                </div>
+            </div>
+        </div><!-- end panel-footer -->
+
+        <div class="row topmar"><!-- panel-footer -->
+            <div class="col-sm-5 text-left">
+                <div class="previous">
+                    <button type="button" id = "master" class="btn btn-primary butwid" style="-webkit-app-region: no-drag" >Create Master List</button>
+                </div>
+            </div>
+        </div><!-- end panel-footer -->
+
+
+    </form>
+
+
+
+    <script>
+
+        const electron = require('electron');
+
+        const {ipcRenderer } = electron;
+        document.querySelector('form').addEventListener('submit', (event) => {
+            event.preventDefault();
+            const fname = document.getElementById('firstName').value;
+            const lname = document.getElementById('lastName').value;
+            const id = document.getElementById('EmployeeID').value;
+            const dob = document.getElementById('dob').value;
+            const feet = document.getElementById('feet').value;
+            const inches = document.getElementById('inches').value;
+            const weight = document.getElementById('Weight').value;
+            const waist = document.getElementById('waistMeasurement').value;
+            const sys = document.getElementById('sys').value;
+            const dys = document.getElementById('dys').value;
+            const bcomp = document.getElementById('bodycomp').value;
+            const bmi = document.getElementById('bmi').value;
+            const preg = document.getElementById('preg').value;
+            const fast = document.getElementById('fast').value;
+            const pace = document.getElementById('pace').value;
+            const biometrics = [ fname, lname, id, dob, feet, inches, weight, waist, sys, dys, bcomp, bmi, preg, fast, pace];
+            ipcRenderer.send('data', biometrics);
+        });
+
+        document.getElementById('quit').addEventListener("click", (event) =>{
+            event.preventDefault()
+            ipcRenderer.send('quitmain');
+        });
+
+        document.getElementById('master').addEventListener("click", (event) =>{
+            event.preventDefault()
+            ipcRenderer.send('createmaster');
+        });
+
+        ipcRenderer.on('sendID', (event, id) => {
+            document.querySelector('#cID').innerHTML = id;
+
+        });
+
+        ipcRenderer.on('clearform', (event) => {
+            document.getElementById('firstName').value = "";
+            document.getElementById('lastName').value = "";
+            document.getElementById('EmployeeID').value = "";
+            document.getElementById('dob').value = "";
+            document.getElementById('feet').value = "";
+            document.getElementById('inches').value = "";
+            document.getElementById('Weight').value = "";
+            document.getElementById('waistMeasurement').value = "";
+            document.getElementById('sys').value = "";
+            document.getElementById('dys').value = "";
+            document.getElementById('bodycomp').value = "";
+            document.getElementById('bmi').value = "";
+            document.getElementById('preg').value = "No";
+            document.getElementById('fast').value = "No";
+            document.getElementById('pace').value = "No";
+
+        });
+
+
+    </script>
+
+
+</div>
+
+</body>
+</html>

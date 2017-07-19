@@ -1,0 +1,19 @@
+{
+  "name": "biometrics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+	"pack:win64": "electron-packager . $npm_package_productName --out=dist/win --platform=win32 --arch=x64 --version=0.36.2 app-version=1.0 --icon=app/photo.jpg",
+	"build": "npm run pack:win64"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^1.6.8",
+    "exceljs": "^0.4.10"
+  }
+
+
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temp</title>
+
+    <link href="app\bootstrap-4.0.0-alpha.6-dist\css\bootstrap.min.css" rel="stylesheet">
+
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">-->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>-->
+
+    <style>
+        .topmar {
+            margin-top: 20px;
+        }
+
+        .butwid {
+            margin-left: 80px;
+            margin-top:  30px;
+            width: 240px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container-fluid" style="-webkit-app-region: drag">
+
+
+    <nav class="navbar navbar-inverse bg-primary" >
+        <a class="navbar-brand" href="#">
+            <h2>Message</h2>
+        </a>
+    </nav>
+
+    <form>
+
+
+
+        <div class= "text-center topmar">
+
+            <h4 class="col-form-label"><span id = 'ok'>OOOOOOOOOOOOOOOOOOOOOOOOOOO</span></h4>
+
+        </div>
+
+        <div class="row"><!-- panel-footer -->
+            <div class="col-sm-10 text-center">
+                <div class="previous">
+                    <button type="submit" id="sub" class="btn btn-primary butwid" style="-webkit-app-region: no-drag" >Ok</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+
+
+    <script>
+
+        const electron = require('electron');
+        const {ipcRenderer } = electron;
+
+        ipcRenderer.on('sendmsg', (event, msg) => {
+            document.querySelector('#ok').innerHTML = msg;
+        });
+
+        document.getElementById('sub').addEventListener("click", (event) =>{
+            event.preventDefault()
+            ipcRenderer.send('killmsg');
+        });
+
+    </script>
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temp</title>
+
+    <link href="app\bootstrap-4.0.0-alpha.6-dist\css\bootstrap.min.css" rel="stylesheet">
+
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">-->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>-->
+
+    <style>
+        .topmar {
+            margin-top: 20px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container-fluid" style="-webkit-app-region: drag">
+
+
+    <nav class="navbar navbar-inverse bg-primary" >
+        <a class="navbar-brand" href="#">
+            <h1>Biometrics</h1>
+        </a>
+    </nav>
+
+    <form>
+
+
+
+        <div class="form-group row topmar">
+
+            <label for="clinicID" class="col-sm-6 col-form-label">Please enter Clinic ID to proceed</label>
+            <div class="col-sm-6">
+                <input type="number" class="form-control" id="clinicID" placeholder="Five Digit #" style="-webkit-app-region: no-drag">
+            </div>
+        </div>
+
+        <div class="row"><!-- panel-footer -->
+            <div class="col-sm-6 text-left">
+                <div class="previous">
+                    <button type="submit" class="btn btn-primary" style="-webkit-app-region: no-drag" >Submit</button>
+                </div>
+            </div>
+            <div class="col-sm-6 text-right">
+                <div class="next">
+                    <button type="button" id="quit" class="btn btn-primary" style="-webkit-app-region: no-drag">Quit Program</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+
+
+    <script>
+
+        const electron = require('electron');
+        const {ipcRenderer } = electron;
+        document.querySelector('form').addEventListener('submit', (event) => {
+            event.preventDefault();
+            const clinic = document.getElementById('clinicID').value;
+            ipcRenderer.send('IDdata', clinic);
+        });
+
+        document.getElementById('quit').addEventListener("click", (event) =>{
+            event.preventDefault()
+            ipcRenderer.send('killapp');
+        });
+
+    </script>
+
+
+</div>
+
+</body>
+</html>
